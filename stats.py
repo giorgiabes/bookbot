@@ -2,9 +2,9 @@ def sort_on(dict):
     return dict["num"]
 
 
-def sorted_lst():
+def sorted_lst(path):
     lst = []
-    for char, num in character_count().items():
+    for char, num in character_count(path).items():
         if char.isalpha():
             lst.append({"char": char, "num": num})
 
@@ -13,8 +13,8 @@ def sorted_lst():
         print(f"{i["char"]}: {i["num"]}")
 
 
-def character_count():
-    text = get_text("books/frankenstein.txt").lower()
+def character_count(path):
+    text = get_text(path).lower()
     my_dict = {}
     for char in text:
         if char in my_dict:
@@ -24,8 +24,8 @@ def character_count():
     return my_dict
 
 
-def get_num_words():
-    text = get_text("books/frankenstein.txt")
+def get_num_words(path):
+    text = get_text(path)
     num_words = len(text.split())
     return num_words
 
